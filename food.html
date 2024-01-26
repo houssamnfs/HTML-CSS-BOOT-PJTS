@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>food</title>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" type="x-icon" href="icons/morocco.png">
+    <script src="js/bootstrap.bundle.js"></script>
+    <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: sans-serif;
+    }
+    .container-animation{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      min-height: 100vh;
+    }
+    .card-animation{
+      position: relative;
+      width: 300px;
+      height: 350px;
+      margin: 20px;
+      /* background: #333; */
+      border-radius: 20px;
+      transition: 0.5s;
+      transition-delay: 0.5s;
+      display: flex;
+      justify-content:flex-start;
+      align-items: center ;
+    }
+    .card-animation:hover{
+      width: 600px;
+      transition-delay: 0s;    
+    }
+    .card-animation .circle{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      /* background: #f00; */
+      border-radius: 20px;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .card-animation .circle::before{
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background:var(--clr);
+      clip-path: circle(120px at center);
+      transition: 0.5s;
+    }
+    .card-animation:hover .circle::before{
+      clip-path: circle(400px at center);
+
+    }
+    .card-animation .circle .logo-animation{
+      position: relative;
+      width: 200px;
+      transition: 0.5s;
+      transition-delay:0.5s;
+    }
+    .card-animation:hover .circle .logo-animation{
+      transform: scale(0);
+      transition-delay:0s;
+    }
+    .content-animation{
+      position: relative;
+      width: 50%;
+      left: 20%;
+      padding: 20px 20px 20px 40px;
+      opacity: 0;
+      transition: 0.5s;
+      visibility: hidden;
+
+    }
+    .card-animation:hover .content-animation{
+      left: 0;
+      opacity: 1;
+      visibility: visible;
+      transition-delay: 0.5s;
+
+    }
+    .content-animation h2{
+      color: white;
+      text-transform: uppercase;
+      font-size: 2.5em;
+      line-height: 1em;
+
+    }
+    .content-animation p{
+      color: white;
+    }
+    .content p a{
+      position: relative;
+      color: #111;
+      background: white;
+      padding: 10px 20px;
+      border-radius: 10px;
+      margin-top: 10px;
+      display: inline-block;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .card-animation .product_img{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      height: 200px;
+      transition: 0.5s;
+      transition-delay: 0s;
+
+    }
+    .card-animation:hover .product_img{
+      left: 72%;
+      transform: translate(-50%, -50%) scale(1);
+      transition-delay: 0.5s;
+
+
+    }
+    /* rosponsive */
+    @media(max-width:901px){
+      .card-animation{
+        width: auto;
+        max-width: 350px;
+        align-items: flex-start;
+      }
+      .card-animation:hover{
+        height: 600px;
+      }
+      .card-animation:hover .product_img{
+        top:initial;
+        bottom: 30px;
+        left: 50%;
+        transform: translate(-50%,0%) scale(1);
+        height: 300px;
+      }
+      .card-animation .content-animation{
+        width: 100%;
+        left: 0;
+        margin-bottom: 200px;
+        padding: 40px
+      
+      }
+      .card-animation .product_img{
+        height: 300px;
+      }
+    }
+   
+
+    </style>
+</head>
+<body>
+        <!-- --------navbar-------- -->
+        <nav class="navbar navbar-expand-sm navbar-light bg-dark fixed-top" id="navbar" >
+            <div class="container">
+              <a class="navbar-brand mt-0" href="index.html" id="logo"><span style="color:red;">IN</span> MOROCCO</a>
+              <button class="navbar-toggler btn btn-success bg-danger p-0 mx-0" type="button" data-bs-toggle="collapse" data-bs-target="#btn-menu" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon " style="border-radius: 3px; height: 40px; width: 40px;"></span>
+              </button>
+              <div class="collapse navbar-collapse ms-3" id="btn-menu">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="navbar-links">
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="food.html">Food</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                      cities
+                    </a>
+                    <ul class="dropdown-menu bg-danger " id="dropdown">
+                      <li><a class="dropdown-item" href="tangier.html">TANGIER</a></li>
+                      <li><a class="dropdown-item" href="chefchaouen.html">CHEFCHAOUEN</a></li>
+                      <li><a class="dropdown-item" href="casablaca.html">CASABLACA</a></li>
+                      <li><a class="dropdown-item" href="marrackech.html">MERRAKECH</a></li>
+                      <li><a class="dropdown-item" href="agader.html">AGADER</a></li>
+                      <li><a class="dropdown-item" href="fez.html">FEZ</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                  </li>
+                </ul>
+                <form class="d-flex" id="rearch">
+                  <input class="form-control-lg" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success text-light border border-light" type="submit">Search</button>
+                </form>
+              </div>
+            </div>
+          </nav>
+        <!-- --------navbar-------- -->
+      <div class="container" style="margin-top: 100px;">
+        <h1 class="text-center">FOOD</h1>
+        <div class="container-animation" style="margin-top: -10px;">
+          <div class="card-animation">
+            <div class="circle" style="--clr:#f40103">
+            <img src="icons/tajine.png" class="logo-animation"></div>
+            <div class="content-animation">
+              <h2 style="margin-left: 20px;">Tagine</h2>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste
+                 nostrum minima voluptas animi dolore modi mollitia iure, molestias ipsa sunt quidem voluptates 
+                 
+                </p>
+            </div>
+            <img src="icons/tajine (1).png" class="product_img">
+          </div>
+          <div class="card-animation">
+            <div class="circle" style="--clr:#02953a">
+            <img src="icons/tea (1).png" class="logo-animation"></div>
+            <div class="content-animation">
+              <h2 style="margin-left: 20px;">Tea</h2>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste
+                 nostrum minima voluptas animi dolore modi mollitia iure, molestias ipsa sunt quidem voluptates 
+            
+                </p>
+            </div>
+            <img src="icons/tea.png" class="product_img">
+          </div>
+        </div>
+        <!-- food -->
+        <div class="food" style="margin-top: 150px;">
+        <h1 class="text-center">FOOD</h1>
+        <div class="row" style="margin-top: 30px;" id="cards">
+          <div class="col-md-3 py-3 py-md-0" id="card-00">
+            <div class="card">
+              <img src="imgs/2022-08/tajine-marocain.jpg" class="card-img"  style="height: 205px;">
+              <div class="card-body">
+                <h3 class="card-title text-center"> TAGINE</h3>
+                <p class="card-sub-title text-center"></p>
+                <p class="card-info text-center">A tagine is an important part of Moroccan cuisine and has been a part of the culture for hundreds of years. </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 py-3 py-md-0">
+          <div class="card">
+            <img src="morocco-img/tagine6.jpg" style="height: 205px;">
+            <div class="card-body">
+              <h3 class="text-center"> TAGINE</h3>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 py-3 py-md-0">
+          <div class="card">
+            <img src="morocco-img/tagine_hoot1.jpg"  style="height: 205px;">
+            <div class="card-body">
+              <h3 class="text-center"> TAGINE</h3>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 py-3 py-md-0">
+          <div class="card">
+            <img src="morocco-img/tagine6.jpg"  style="height: 205px;">
+            <div class="card-body">
+              <h3 class="text-center"> TAGINE</h3>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 py-3 py-md-0 mt-3">
+          <div class="card">
+            <img src="morocco-img/tagine_hoot1.jpg" style="height: 205px;" >
+            <div class="card-body">
+              <h3 class="text-center"> TAGINE</h3>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 py-3 py-md-0 mt-3">
+          <div class="card">
+            <img src="morocco-img/tagine_kefta1.jpg" style="height: 205px;">
+            <div class="card-body">
+              <h3 class="text-center"> TAGINE</h3>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 py-3 py-md-0 mt-3">
+          <div class="card">
+            <img src="morocco-img/tagines.jpg" style="height: 205px;">
+            <div class="card-body">
+              <h3 class="text-center"> TAGINE</h3>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 py-3 py-md-0 mt-3">
+          <div class="card">
+            <img src="morocco-img/kefta_tagine.jpg" style="height: 205px;">
+            <div class="card-body">
+              <h3 class="text-center"> TAGINE</h3>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 py-3 py-md-0 my-5">
+          <div class="card">
+            <img src="morocco-img/l3xamorocco.jpg" style="height: 550px;">
+            <div class="card-body">
+              <h3 class="text-center"> FOOD</h3>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 py-3 py-md-0 my-5">
+          <div class="card">
+            <img src="morocco-img/ftoormorocco.jpg" style="height: 550px;">
+            <div class="card-body">
+              <h3 class="text-center"> FOOD</h3>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 py-3 py-md-0 ">
+          <div class="card">
+            <img src="morocco-img/couscous2.jpg" style="height: 205px;">
+            <div class="card-body">
+              <h3 class="text-center"> COUSCOUS</h3>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 py-3 py-md-0 ">
+          <div class="card">
+            <img src="morocco-img/couscous4 (2).jpg" style="height: 205px;">
+            <div class="card-body">
+              <h3 class="text-center"> COUSCOUS</h3>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 py-3 py-md-0 ">
+          <div class="card">
+            <img src="morocco-img/couscous4.jpg" style="height: 205px;">
+            <div class="card-body">
+              <h3 class="text-center"> COUSCOUS</h3>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 py-3 py-md-0 ">
+          <div class="card">
+            <img src="morocco-img/couscous6.jpg" style="height: 205px;">
+            <div class="card-body">
+              <h3 class="text-center">COUSCOUS</h3>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 py-3 py-md-0 mt-3">
+          <div class="card">
+            <img src="morocco-img/lham_belbar9o91.jpg" style="height: 205px;">
+            <div class="card-body">
+              <h3 class="text-center"> MEAT</h3>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 py-3 py-md-0 mt-3">
+          <div class="card">
+            <img src="morocco-img/lhambbar9o9_2.jpg" style="height: 205px;">
+            <div class="card-body">
+              <h3 class="text-center"> MEAT</h3>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 py-3 py-md-0 mt-3">
+          <div class="card">
+            <img src="morocco-img/djajmhamar1.jpg" style="height: 205px;">
+            <div class="card-body">
+              <h3 class="text-center">TANJIA</h3>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 py-3 py-md-0 mt-3">
+          <div class="card">
+            <img src="morocco-img/food_tanjia.jpg" style="height: 205px;">
+            <div class="card-body">
+              <h3 class="text-center">TANJIA</h3>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 py-3 py-md-0 my-5" >
+          <div class="card">
+            <img src="morocco-img/moroccofood.jpg" style="height: 550px;">
+            <div class="card-body">
+              <h3 class="text-center"> FOOD</h3>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 py-3 py-md-0 my-5">
+          <div class="card">
+            <img src="morocco-img/ftoormorocco.jpg"style="height: 550px;">
+            <div class="card-body">
+              <h3 class="text-center"> food</h3>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 py-3 py-md-0 mt-3">
+          <div class="card">
+            <img src="morocco-img/bistila.jpg" style="height: 205px;">
+            <div class="card-body">
+              <h3 class="text-center">  BESTILA</h3>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 py-3 py-md-0 mt-3">
+          <div class="card">
+            <img src="morocco-img/bistila2.jpg" style="height: 205px;">
+            <div class="card-body">
+              <h3 class="text-center">  BESTILA</h3>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 py-3 py-md-0 mt-3">
+          <div class="card">
+            <img src="morocco-img/bistila3.jpg" style="height: 205px;">
+            <div class="card-body">
+              <h3 class="text-center">  BESTILA</h3>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 py-3 py-md-0 mt-3">
+          <div class="card">
+            <img src="morocco-img/moroccofood.jpg" style="height: 205px;">
+            <div class="card-body">
+              <h3 class="text-center"> BESTILA</h3>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 py-3 py-md-0 mt-3">
+          <div class="card">
+            <img src="morocco-img/food_bissara1.jpg" style="height: 205px;">
+            <div class="card-body">
+              <h3 class="text-center"> Bessara</h3>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 py-3 py-md-0 mt-3">
+          <div class="card">
+            <img src="morocco-img/hoot_mixwi1.jpg" style="height: 205px;">
+            <div class="card-body">
+              <h3 class="text-center "> FISH</h3>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 py-3 py-md-0 mt-3">
+          <div class="card">
+            <img src="morocco-img/hoot_me9li1.jpg" style="height: 205px;">
+            <div class="card-body">
+              <h3 class="text-center"> FISH</h3>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 py-3 py-md-0 mt-3">
+          <div class="card">
+            <img src="morocco-img/hoot_me9li2.jpg" style="height: 205px;">
+            <div class="card-body">
+              <h3 class="text-center"> FISH</h3>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 py-3 py-md-0 my-5">
+          <div class="card">
+            <img src="morocco-img/atay1.jpg" style="height: 550px;">
+            <div class="card-body">
+              <h3 class="text-center"> TEA</h3>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 py-3 py-md-0 my-5">
+          <div class="card">
+            <img src="morocco-img/atay2.jpg" style="height: 550px;">
+            <div class="card-body">
+              <h3 class="text-center"> TEA</h3>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 py-3 py-md-0 mt-3">
+          <div class="card">
+            <img src="morocco-img/halwa1.jpg" style="height: 205px;">
+            <div class="card-body">
+              <h3 class="text-center"> KINDY</h3>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 py-3 py-md-0 mt-3">
+          <div class="card">
+            <img src="morocco-img/hawla2.jpg" style="height: 205px;">
+            <div class="card-body">
+              <h3 class="text-center"> KANDY</h3>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 py-3 py-md-0 mt-3">
+          <div class="card">
+            <img src="morocco-img/halwa5.jpg" style="height: 205px;">
+            <div class="card-body">
+              <h3 class="text-center"> KANDY</h3>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 py-3 py-md-0 mt-3">
+          <div class="card">
+            <img src="morocco-img/atay4.jpg" style="height: 205px;">
+            <div class="card-body">
+              <h3 class="text-center"> TEA</h3>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 py-3 py-md-0 mt-3">
+          <div class="card">
+            <img src="morocco-img/atay3.jpg" style="height: 205px;">
+            <div class="card-body">
+              <h3 class="text-center"> TEA</h3>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 py-3 py-md-0 mt-3">
+          <div class="card">
+            <img src="morocco-img/msimin1.jpg" style="height: 205px;">
+            <div class="card-body">
+              <h3 class="text-center">MSEMIN</h3>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 py-3 py-md-0 mt-3">
+          <div class="card">
+            <img src="morocco-img/r4ayif2.jpg" style="height: 205px;">
+            <div class="card-body">
+              <h3 class="text-center"> RGAYEF</h3>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 py-3 py-md-0 mt-3">
+          <div class="card">
+            <img src="morocco-img/briwat_hlewn.jpg" style="height: 205px;">
+            <div class="card-body">
+              <h3 class="text-center"> BRIWAT</h3>
+            </div>
+          </div>
+        </div>
+    </div>
+                        <!-- food -->
+               <!---------footer--------->
+      <footer class="bg-dark">
+      <div class="footer-top">
+        <div class="container">
+          <div class="row">
+
+            <div class="col-lg-3 col-md-6">
+              <h3>Other Cities</h3>
+              <p class="ms-4" >
+                TAOUNATE <br>
+                SALE <br>
+                
+                
+              </p>
+              
+            </div>
+
+            <div class="col-lg-3 col-md-6" id="footer-links">
+              <h3>Our links</h3>
+              <ul>
+                <li><a href="index.html" >Home</a></li>
+                <li><a href="food.html">Food</a></li>
+                <li><a href="#">Cities</a></li>
+                <li><a href="about.html">About us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+              </ul>
+            </div>
+
+            <div class="col-lg-3 col-md-6" id="footer-links">
+              <h3>Our Services</h3>
+              <ul>
+                <li><a href="">Travel</a></li>
+                <li><a href="">Food</a></li>
+                <li><a href="">Cultures</a></li>
+                <li><a href="">New Life</a></li>
+                <li><a href="">Travel Morocco</a></li>
+
+              </ul>
+            </div>
+            <div class="col-lg-3 col-md-6 " id="us">
+              <h3 class="ms-2">Contact us </h3>
+              <p class="ms-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, illo.</p>
+              <div class="social-links mt-3 ms-4" id="social">
+                <a href=""><i class="uil uil-twitter"></i></a>
+                <a href=""><i class="uil uil-facebook"></i></a>
+                <a href=""><i class="uil uil-instagram-alt"></i></a>
+                <a href=""><i class="uil uil-envelope-edit"></i></a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="container" style="margin-top: 30px;">
+        <div class="text-center ">
+          &COPY; Copyright <strong><span><span style="color: red;">IN</span>MOROCCO</span></strong> 
+        </div>
+        <div class="text-center" style="margin-top: 10px;">
+          Designed By <b style="color: red;">HOUSSAM NFISSI</b> <b style="color: red;"></b>
+        </div>
+      </div>
+
+    </footer>
+              <!---------footer--------->                 
+
+</div>
+
+
+</body>
+</html>

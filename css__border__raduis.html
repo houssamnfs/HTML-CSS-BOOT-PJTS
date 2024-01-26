@@ -1,0 +1,121 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            display: flex;
+            flex-direction: row;
+            color: white;
+            align-items: center;
+            justify-content: center;
+            background-color: blueviolet;
+            width: 200px;
+            height: 200px;
+            border-radius: 0px 100px 120px;
+            
+        }
+    </style>
+</head>
+<body>
+    <div>
+        this is me
+    </div>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Personal Information</title>
+    <link  href="php.php">
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f2f2f2;
+		}
+		form {
+			background-color: #fff;
+			padding: 20px;
+			margin: 20px auto;
+			max-width: 500px;
+			border-radius: 5px;
+			box-shadow: 0px 0px 10px #ccc;
+		}
+		label {
+			display: block;
+			margin-bottom: 10px;
+			font-weight: bold;
+			color: #333;
+		}
+		input[type="text"], input[type="date"] {
+			display: block;
+			width: 100%;
+			padding: 10px;
+			border-radius: 3px;
+			border: 1px solid #ccc;
+			margin-bottom: 20px;
+			box-sizing: border-box;
+			font-size: 16px;
+		}
+		input[type="submit"] {
+			background-color: #4CAF50;
+			color: #fff;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 3px;
+			cursor: pointer;
+			font-size: 16px;
+			transition: background-color 0.2s ease-in-out;
+		}
+		input[type="submit"]:hover {
+			background-color: #3e8e41;
+		}
+	</style>
+	<script>
+		// Get a reference to the form element
+		const form = document.querySelector('form');
+
+		// Add a submit event listener to the form
+		form.addEventListener('submit', (event) => {
+			// Get the value of the "Favorite Sport" field
+			const sportInput = document.getElementById('sport');
+			const sportValue = sportInput.value;
+
+			// Check if the value is a number
+			if (!isNaN(sportValue)) {
+				// If it is, prevent the form from being submitted
+				event.preventDefault();
+
+				// Add a red border to the "Favorite Sport" field
+				sportInput.style.borderColor = 'red';
+
+				// Display an error message
+				const errorMessage = document.createElement('div');
+				errorMessage.textContent = 'Please enter a valid sport name';
+				errorMessage.style.color = 'red';
+				form.insertBefore(errorMessage, sportInput.nextSibling);
+			}
+		});
+	</script>
+</head>
+<body>
+
+	<form>
+		<label for="name">Name:</label>
+		<input type="text" id="name" name="name">
+
+		<label for="dob">Date of Birth:</label>
+		<input type="date" id="dob" name="dob">
+
+		<label for="sport">Favorite Sport:</label>
+		<input type="text" id="sport" name="sport">
+
+		<input type="submit" value="Submit">
+	</form>
+</body>
+</html>
+

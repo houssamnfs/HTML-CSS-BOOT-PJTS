@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chefchaouen</title>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="shortcut icon" type="x-icon" href="icons/chefchaouen.png">
+    <link rel="stylesheet" href="style.css">
+    <script src="js/bootstrap.bundle.js"></script>
+    <style>
+        .box{
+            position: relative;
+            width: 402px;
+            height: 350px;
+            
+        }
+        .box .imgBox{
+            position: relative;
+            overflow: hidden;
+
+        }
+        .box .imgBox img{
+            max-width: 100%;
+            transition: transform 2s;
+        }
+        .box:hover .imgBox img {
+            transform: scale(1.2);
+        }
+        .box .info{
+            position: absolute;
+            top: 50px;
+            left: 10px;
+            bottom: 10px;
+            right: 30px;
+            backdrop-filter: blur(5px);
+            transform: scaleY(0);
+            transition: transform 0.5s;
+        }
+        .box:hover .info{
+            transform: scaleY(1);
+        }
+        .box .info .info-info{
+            position:absolute;
+            padding: 15px;
+           
+            
+
+        }
+         
+    </style>
+</head>
+<body>
+      <!-- --------navbar-------- -->
+      <nav class="navbar navbar-expand-sm navbar-light bg-dark fixed-top" id="navbar">
+        <div class="container">
+          <a class="navbar-brand mt-0" href="index.html" id="logo"><span style="color:red;">IN</span> MOROCCO</a>
+          <button class="navbar-toggler btn btn-success bg-danger p-0 mx-0" type="button" data-bs-toggle="collapse" data-bs-target="#btn-menu" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon " style="border-radius: 3px; height: 40px; width: 40px;"></span>
+          </button>
+          <div class="collapse navbar-collapse ms-3" id="btn-menu">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="navbar-links">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="food.html">Food</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                  cities
+                </a>
+                <ul class="dropdown-menu bg-danger " id="dropdown">
+                  <li><a class="dropdown-item" href="tangier.html">TANGIER</a></li>
+                  <li><a class="dropdown-item" href="chefchaouen.html">CHEFCHAOUEN</a></li>
+                  <li><a class="dropdown-item" href="casablaca.html">CASABLACA</a></li>
+                  <li><a class="dropdown-item" href="marrackech.html">MERRAKECH</a></li>
+                  <li><a class="dropdown-item" href="agader.html">AGADER</a></li>
+                  <li><a class="dropdown-item" href="fez.html">FEZ</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact</a>
+              </li>
+            </ul>
+            <form class="d-flex" id="rearch">
+              <input class="form-control-lg" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success text-light border border-light" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    <!-- --------navbar-------- -->
+    <div class="container" style="margin-top: 100px;">
+      <h1 class="text-center fw-bold " style="margin-bottom: 0;">CHEFCHAOUEN</h1> 
+      <h1 class="text-center mb-5" style="color: orange;">__________________________________________________________</h1>
+        <div class="container-animation" style="margin-top: -90px; ">
+          <div class="card-animation">
+            <div class="circle" style="--clr: #005eff">
+            <img src="icons/chefchaouen (1).png" class="logo-animation"></div>
+            <div class="content-animation">
+              <h2 >chefchaouen</h2>
+              <p><span class="fw-bold">Chefchaouen</span> certainly has a name that’s difficult to pronounce, but its appearance is nevertheless very easy to recognise. There’s a reason it’s called “the blue city”. It has this name thanks to the walls of its houses, as well as the staircases and interior courtyards, which are painted indigo and white. </p>
+            </div>
+            <img src="icons/chefchaouen.png" class="product_img">
+        </div>
+    </div>
+    <!-- tangier -->
+    <div  id="contact" >
+        <div class="container">
+          <h2 class="text-center">OUR PLACE</h2>
+            <div class="row" style="margin-top: 50px;"style="margin-top: -20px;">
+                <div class="col-md-4 py-3 py-md-0" style="margin-top: 150px;">
+                    <div class="box ">
+                        <div class="imgBox me-4"><img class="card-img-top" src="morocco-img/chechaouen3.jpg"  style="height: 460px;" ></div>
+                        <div class="info">
+                            <div class="info-info">
+                                 <h1 class="text-center" style="color: white;">chefchaouen</h1>
+                                 <p class="text-light"><span class="fw-bold text-light">Chefchaouen</span> certainly has a name that’s difficult to pronounce, but its appearance is nevertheless very easy to recognise. There’s a reason it’s called “the blue city”. It has this name thanks to the walls of its houses, as well as the staircases and interior courtyards, which are painted indigo and white. </p>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 py-3 py-md-0" style="margin-top: 150px;">
+                  <div class="box ">
+                      <div class="imgBox me-4"><img class="card-img-top" src="morocco-img/chefchaouen1.jpg"  style="height: 460px;" ></div>
+                      <div class="info">
+                          <div class="info-info">
+                               <h1 class="text-center" style="color: white;">chefchaouen</h1>
+                               <p class="text-light"><span class="fw-bold text-light">Chefchaouen</span> certainly has a name that’s difficult to pronounce, but its appearance is nevertheless very easy to recognise. There’s a reason it’s called “the blue city”. It has this name thanks to the walls of its houses, as well as the staircases and interior courtyards, which are painted indigo and white. </p>
+                          </div> 
+                      </div>
+                  </div>
+                </div>
+                <div class="col-md-4 py-3 py-md-0" style="margin-top: 150px;">
+                  <div class="box ">
+                      <div class="imgBox me-4"><img class="card-img-top" src="morocco-img/chefchaouen12.jpg"  style="height: 460px;" ></div>
+                      <div class="info">
+                          <div class="info-info">
+                               <h1 class="text-center" style="color: white;">chefchaouen</h1>
+                               <p class="text-light"><span class="fw-bold text-light">Chefchaouen</span> certainly has a name that’s difficult to pronounce, but its appearance is nevertheless very easy to recognise. There’s a reason it’s called “the blue city”. It has this name thanks to the walls of its houses, as well as the staircases and interior courtyards, which are painted indigo and white. </p>
+                          </div> 
+                      </div>
+                  </div>
+                </div>
+                <div class="col-md-4 py-3 py-md-0" style="margin-top: 150px;">
+                  <div class="box ">
+                      <div class="imgBox me-4"><img class="card-img-top" src="morocco-img/chefchaouen2.jpg"  style="height: 460px;" ></div>
+                      <div class="info">
+                          <div class="info-info">
+                               <h1 class="text-center" style="color: white;">chefchaouen</h1>
+                               <p class="text-light"><span class="fw-bold text-light">Chefchaouen</span> certainly has a name that’s difficult to pronounce, but its appearance is nevertheless very easy to recognise. There’s a reason it’s called “the blue city”. It has this name thanks to the walls of its houses, as well as the staircases and interior courtyards, which are painted indigo and white. </p>
+                          </div> 
+                      </div>
+                  </div>
+                </div>
+                <div class="col-md-4 py-3 py-md-0" style="margin-top: 150px;">
+                  <div class="box ">
+                      <div class="imgBox me-4"><img class="card-img-top" src="morocco-img/chefchaouen12 (2).jpg"  style="height: 460px;" ></div>
+                      <div class="info">
+                          <div class="info-info">
+                               <h1 class="text-center" style="color: white;">chefchaouen</h1>
+                               <p class="text-light"><span class="fw-bold text-light">Chefchaouen</span> certainly has a name that’s difficult to pronounce, but its appearance is nevertheless very easy to recognise. There’s a reason it’s called “the blue city”. It has this name thanks to the walls of its houses, as well as the staircases and interior courtyards, which are painted indigo and white. </p>
+                          </div> 
+                      </div>
+                  </div>
+                </div>
+                <div class="col-md-4 py-3 py-md-0" style="margin-top: 150px;">
+                  <div class="box ">
+                      <div class="imgBox me-4"><img class="card-img-top" src="morocco-img/chefchaouen10.jpg"  style="height: 460px;" ></div>
+                      <div class="info">
+                          <div class="info-info">
+                               <h1 class="text-center" style="color: white;">chefchaouen</h1>
+                               <p class="text-light"><span class="fw-bold text-light">Chefchaouen</span> certainly has a name that’s difficult to pronounce, but its appearance is nevertheless very easy to recognise. There’s a reason it’s called “the blue city”. It has this name thanks to the walls of its houses, as well as the staircases and interior courtyards, which are painted indigo and white. </p>
+                          </div> 
+                      </div>
+                  </div>
+                </div>
+                <div class="col-md-4 py-3 py-md-0" style="margin-top: 150px;">
+                  <div class="box ">
+                      <div class="imgBox me-4"><img class="card-img-top" src="morocco-img/chefchaouen6.jpg"  style="height: 460px;" ></div>
+                      <div class="info">
+                          <div class="info-info">
+                               <h1 class="text-center" style="color: white;">chefchaouen</h1>
+                               <p class="text-light"><span class="fw-bold text-light">Chefchaouen</span> certainly has a name that’s difficult to pronounce, but its appearance is nevertheless very easy to recognise. There’s a reason it’s called “the blue city”. It has this name thanks to the walls of its houses, as well as the staircases and interior courtyards, which are painted indigo and white. </p>
+                          </div> 
+                      </div>
+                  </div>
+                </div>
+                <div class="col-md-4 py-3 py-md-0" style="margin-top: 150px;">
+                  <div class="box ">
+                      <div class="imgBox me-4"><img class="card-img-top" src="morocco-img/chefchaouen7.jpg"  style="height: 460px;" ></div>
+                      <div class="info">
+                          <div class="info-info">
+                               <h1 class="text-center" style="color: white;">chefchaouen</h1>
+                               <p class="text-light"><span class="fw-bold text-light">Chefchaouen</span> certainly has a name that’s difficult to pronounce, but its appearance is nevertheless very easy to recognise. There’s a reason it’s called “the blue city”. It has this name thanks to the walls of its houses, as well as the staircases and interior courtyards, which are painted indigo and white. </p>
+                          </div> 
+                      </div>
+                  </div>
+                </div>
+                <div class="col-md-4 py-3 py-md-0" style="margin-top: 150px;">
+                  <div class="box ">
+                      <div class="imgBox me-4"><img class="card-img-top" src="morocco-img/chefchaouen9.jpg"  style="height: 460px;" ></div>
+                      <div class="info">
+                          <div class="info-info">
+                               <h1 class="text-center" style="color: white;">chefchaouen</h1>
+                               <p class="text-light"><span class="fw-bold text-light">Chefchaouen</span> certainly has a name that’s difficult to pronounce, but its appearance is nevertheless very easy to recognise. There’s a reason it’s called “the blue city”. It has this name thanks to the walls of its houses, as well as the staircases and interior courtyards, which are painted indigo and white. </p>
+                          </div> 
+                      </div>
+                  </div>
+                </div>
+                <div class="col-md-4 py-3 py-md-0" style="margin-top: 150px;">
+                  <div class="box ">
+                      <div class="imgBox me-4"><img class="card-img-top" src="morocco-img/chefchaouen15.jpg"  style="height: 460px;" ></div>
+                      <div class="info">
+                          <div class="info-info">
+                               <h1 class="text-center" style="color: white;">chefchaouen</h1>
+                               <p class="text-light"><span class="fw-bold text-light">Chefchaouen</span> certainly has a name that’s difficult to pronounce, but its appearance is nevertheless very easy to recognise. There’s a reason it’s called “the blue city”. It has this name thanks to the walls of its houses, as well as the staircases and interior courtyards, which are painted indigo and white. </p>
+                          </div> 
+                      </div>
+                  </div>
+                </div>
+                <div class="col-md-4 py-3 py-md-0" style="margin-top: 150px;">
+                  <div class="box ">
+                      <div class="imgBox me-4"><img class="card-img-top" src="morocco-img/chefchaouen00.jpg"  style="height: 460px;" ></div>
+                      <div class="info">
+                          <div class="info-info">
+                               <h1 class="text-center" style="color: white;">chefchaouen</h1>
+                               <p class="text-light"><span class="fw-bold text-light">Chefchaouen</span> certainly has a name that’s difficult to pronounce, but its appearance is nevertheless very easy to recognise. There’s a reason it’s called “the blue city”. It has this name thanks to the walls of its houses, as well as the staircases and interior courtyards, which are painted indigo and white. </p>
+                          </div> 
+                      </div>
+                  </div>
+                </div>
+                <div class="col-md-4 py-3 py-md-0" style="margin-top: 150px;">
+                  <div class="box ">
+                      <div class="imgBox me-4"><img class="card-img-top" src="morocco-img/chefchaouen6.jpg"  style="height: 460px;" ></div>
+                      <div class="info">
+                          <div class="info-info">
+                               <h1 class="text-center" style="color: white;">chefchaouen</h1>
+                               <p class="text-light"><span class="fw-bold text-light">Chefchaouen</span> certainly has a name that’s difficult to pronounce, but its appearance is nevertheless very easy to recognise. There’s a reason it’s called “the blue city”. It has this name thanks to the walls of its houses, as well as the staircases and interior courtyards, which are painted indigo and white. </p>
+                          </div> 
+                      </div>
+                  </div>
+                </div>
+                
+             
+                
+                
+            </div> 
+        </div>      
+    </div>
+    <!-- chefchaouen -->
+    
+</body>
+</html>
