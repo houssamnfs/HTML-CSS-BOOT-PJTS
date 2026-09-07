@@ -1,508 +1,472 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="In Morocco — a visual guide to Moroccan cities, food and culture.">
-<title>In Morocco — Discover Morocco</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="IN MOROCCO — cities, food, landscapes and culture.">
+<title>IN MOROCCO — A country worth getting lost in</title>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap');
+
 :root{
-  --ink:#101313;
-  --muted:#68706d;
-  --paper:#f4f1ea;
-  --white:#fffdf8;
-  --red:#d43b32;
-  --green:#0f6650;
-  --line:rgba(16,19,19,.12);
-  --shadow:0 24px 70px rgba(22,26,25,.12);
-  --radius:28px;
+  --bg:#f3f0e9;
+  --paper:#faf8f2;
+  --black:#151715;
+  --grey:#777a74;
+  --red:#c63831;
+  --green:#175d4d;
+  --rule:#d9d5cc;
+  --serif:"Playfair Display",Georgia,serif;
+  --sans:"DM Sans",Arial,sans-serif;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{
-  margin:0;
-  color:var(--ink);
-  background:var(--paper);
-  font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-  line-height:1.6;
-}
+body{margin:0;background:var(--bg);color:var(--black);font-family:var(--sans);font-size:15px}
+img{display:block;width:100%}
 a{color:inherit;text-decoration:none}
-img{display:block;max-width:100%}
 button,input,textarea{font:inherit}
-button{cursor:pointer}
-.container{width:min(1180px,calc(100% - 40px));margin:auto}
+::selection{background:var(--red);color:#fff}
 
-/* NAV */
-.nav{
-  position:fixed;z-index:50;top:14px;left:0;right:0;
+/* ---------- HEADER ---------- */
+header{
+  position:absolute;z-index:20;top:0;left:0;width:100%;
+  color:#fff;
 }
-.nav-inner{
-  width:min(1180px,calc(100% - 28px));
-  margin:auto;
-  min-height:68px;
-  display:flex;align-items:center;gap:26px;
-  padding:10px 12px 10px 20px;
-  border:1px solid rgba(255,255,255,.45);
-  background:rgba(255,253,248,.78);
-  backdrop-filter:blur(18px) saturate(150%);
-  -webkit-backdrop-filter:blur(18px) saturate(150%);
-  border-radius:999px;
-  box-shadow:0 12px 40px rgba(0,0,0,.08);
+.header-inner{
+  width:min(1280px,calc(100% - 56px));margin:auto;
+  height:92px;display:flex;align-items:center;
+  border-bottom:1px solid rgba(255,255,255,.28);
 }
-.logo{font-weight:900;letter-spacing:-.06em;font-size:20px;white-space:nowrap}
-.logo span{color:var(--red)}
-.nav-links{display:flex;align-items:center;gap:4px;margin-left:auto}
-.nav-links a{
-  padding:9px 13px;border-radius:999px;font-size:14px;color:#4d5653;
-  transition:.2s ease;
+.brand{
+  font-weight:700;letter-spacing:-.055em;font-size:18px;
 }
-.nav-links a:hover,.nav-links a.active{background:#ece9e1;color:var(--ink)}
-.nav-cta{
-  background:var(--ink);color:white;padding:11px 17px;border-radius:999px;
-  font-size:14px;font-weight:750;white-space:nowrap;
+.brand i{font-style:normal;color:#f05a52}
+.nav{margin-left:auto;display:flex;gap:34px}
+.nav a{
+  font-size:12px;text-transform:uppercase;letter-spacing:.11em;
+  opacity:.82;transition:.2s;
 }
-.menu{display:none;border:0;background:var(--ink);color:#fff;border-radius:50%;width:42px;height:42px}
+.nav a:hover{opacity:1}
+.header-index{margin-left:55px;font-size:11px;opacity:.6}
 
-/* HERO */
+/* ---------- HERO ---------- */
 .hero{
-  min-height:100svh;
-  padding:145px 0 70px;
-  display:flex;align-items:center;
-  position:relative;overflow:hidden;
+  min-height:860px;height:100svh;max-height:1000px;position:relative;
+  background:#333;overflow:hidden;color:#fff;
 }
-.hero:before{
-  content:"";
-  position:absolute;width:560px;height:560px;border-radius:50%;
-  background:rgba(212,59,50,.08);right:-250px;top:110px;filter:blur(2px);
+.hero-image{
+  position:absolute;inset:0;
 }
-.hero-grid{
-  display:grid;grid-template-columns:1.03fr .97fr;gap:70px;align-items:center;
-}
-.kicker{
-  display:inline-flex;align-items:center;gap:9px;
-  padding:7px 11px;border:1px solid var(--line);border-radius:999px;
-  color:#4e5754;background:rgba(255,255,255,.35);
-  font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;
-}
-.dot{width:7px;height:7px;border-radius:50%;background:var(--red)}
-.hero h1{
-  font-size:clamp(62px,8vw,112px);line-height:.86;
-  letter-spacing:-.075em;margin:25px 0 28px;max-width:700px;
-}
-.hero h1 em{font-family:Georgia,serif;font-weight:400;letter-spacing:-.07em}
-.hero-copy{max-width:570px;color:var(--muted);font-size:17px}
-.hero-actions{display:flex;align-items:center;gap:14px;margin-top:31px}
-.primary,.secondary{
-  display:inline-flex;align-items:center;justify-content:center;gap:10px;
-  padding:14px 19px;border-radius:999px;font-weight:800;font-size:14px;
-}
-.primary{background:var(--red);color:#fff}
-.secondary{border:1px solid var(--line);background:rgba(255,255,255,.4)}
-.arrow{font-size:18px;line-height:0}
-.hero-media{position:relative}
-.hero-photo{
-  height:590px;border-radius:36px;overflow:hidden;box-shadow:var(--shadow);
-  background:#d8d0c2;position:relative;
-}
-.hero-photo img{width:100%;height:100%;object-fit:cover}
-.hero-photo:after{
+.hero-image img{height:100%;object-fit:cover}
+.hero-image:after{
   content:"";position:absolute;inset:0;
-  background:linear-gradient(180deg,transparent 52%,rgba(0,0,0,.48));
+  background:linear-gradient(90deg,rgba(0,0,0,.57),rgba(0,0,0,.12) 65%,rgba(0,0,0,.28)),
+             linear-gradient(0deg,rgba(0,0,0,.52),transparent 38%);
 }
-.photo-label{
-  position:absolute;z-index:2;left:25px;right:25px;bottom:22px;color:#fff;
-  display:flex;justify-content:space-between;align-items:end;
+.hero-content{
+  position:relative;z-index:2;width:min(1280px,calc(100% - 56px));height:100%;
+  margin:auto;display:flex;flex-direction:column;justify-content:flex-end;
+  padding:0 0 86px;
 }
-.photo-label strong{font-size:25px;letter-spacing:-.03em}
-.photo-label small{opacity:.78}
-.floating-card{
-  position:absolute;z-index:4;left:-34px;bottom:45px;
-  width:205px;padding:17px;border-radius:20px;background:rgba(255,253,248,.88);
-  backdrop-filter:blur(15px);box-shadow:0 18px 50px rgba(0,0,0,.15);
-  border:1px solid rgba(255,255,255,.65);
+.hero-kicker{
+  display:flex;align-items:center;gap:12px;font-size:10px;
+  letter-spacing:.18em;text-transform:uppercase;margin-bottom:21px;
 }
-.floating-card .num{font-size:34px;font-weight:900;letter-spacing:-.07em}
-.floating-card p{font-size:12px;color:var(--muted);margin:0}
-
-/* MARQUEE */
-.marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden}
-.marquee-track{display:flex;width:max-content;animation:move 28s linear infinite}
-.marquee span{padding:17px 24px;font-size:12px;font-weight:900;letter-spacing:.16em;text-transform:uppercase;color:#68706d}
-.marquee b{color:var(--red)}
-@keyframes move{to{transform:translateX(-50%)}}
-
-/* SECTIONS */
-section{padding:115px 0}
-.section-head{display:flex;justify-content:space-between;gap:40px;align-items:end;margin-bottom:42px}
-.eyebrow{font-size:12px;font-weight:900;letter-spacing:.15em;text-transform:uppercase;color:var(--red)}
-.section-head h2{font-size:clamp(42px,5vw,68px);line-height:.95;letter-spacing:-.065em;margin:9px 0 0}
-.section-head p{max-width:420px;color:var(--muted);margin:0}
-
-/* CITIES */
-.city-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
-.city{position:relative;height:480px;border-radius:var(--radius);overflow:hidden;background:#ccc;isolation:isolate}
-.city:nth-child(1){grid-column:span 7}
-.city:nth-child(2){grid-column:span 5;height:480px}
-.city:nth-child(3){grid-column:span 4;height:390px}
-.city:nth-child(4){grid-column:span 4;height:390px}
-.city:nth-child(5){grid-column:span 4;height:390px}
-.city:nth-child(6){grid-column:span 6;height:390px}
-.city:nth-child(7){grid-column:span 6;height:390px}
-.city img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
-.city:hover img{transform:scale(1.045)}
-.city:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 35%,rgba(0,0,0,.75))}
-.city-info{position:absolute;z-index:2;left:24px;right:24px;bottom:22px;color:#fff}
-.city-info span{font-size:11px;text-transform:uppercase;letter-spacing:.13em;opacity:.75}
-.city-info h3{font-size:31px;line-height:1;margin:5px 0}
-.city-info p{font-size:13px;opacity:.78;margin:0;max-width:430px}
-
-/* STORY */
-.story{
-  background:var(--ink);color:#fff;
+.hero-kicker:before{content:"";width:36px;height:1px;background:#fff}
+.hero h1{
+  font-size:clamp(72px,10.5vw,150px);font-weight:500;
+  letter-spacing:-.075em;line-height:.82;margin:0;
+  max-width:1000px;
 }
-.story-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:90px;align-items:start}
-.story h2{font-size:clamp(45px,5vw,72px);line-height:.94;letter-spacing:-.065em;margin:8px 0}
-.story p{color:#aeb5b2}
-.story-copy{font-size:18px;max-width:650px}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid rgba(255,255,255,.14);margin-top:42px}
-.stat{padding:23px 20px 0 0;border-right:1px solid rgba(255,255,255,.14)}
-.stat:not(:first-child){padding-left:20px}
-.stat:last-child{border:0}
-.stat strong{display:block;font-size:37px;letter-spacing:-.05em}
-.stat span{font-size:12px;color:#89918e}
-
-/* FOOD */
-.food-layout{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.food-card{position:relative;border-radius:var(--radius);overflow:hidden;height:560px;background:#ccc}
-.food-card.small{height:275px}
-.food-card img{width:100%;height:100%;object-fit:cover;transition:.6s}
-.food-card:hover img{transform:scale(1.04)}
-.food-stack{display:grid;gap:18px}
-.food-card:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 35%,rgba(0,0,0,.72))}
-.food-title{position:absolute;z-index:2;bottom:22px;left:24px;color:#fff}
-.food-title small{text-transform:uppercase;letter-spacing:.15em;font-size:10px;opacity:.72}
-.food-title h3{font-size:31px;margin:3px 0;line-height:1}
-.food-title p{font-size:12px;margin:5px 0 0;opacity:.78}
-
-/* CONTACT */
-.contact-box{
-  background:#e8e3d8;border-radius:36px;padding:58px;
-  display:grid;grid-template-columns:.8fr 1.2fr;gap:70px;
+.hero h1 em{font-family:var(--serif);font-weight:500;letter-spacing:-.06em}
+.hero-bottom{
+  display:flex;justify-content:space-between;align-items:flex-end;
+  margin-top:35px;max-width:1020px;
 }
-.contact-box h2{font-size:clamp(42px,5vw,68px);line-height:.9;letter-spacing:-.065em;margin:10px 0 20px}
-.contact-box p{color:var(--muted)}
-.contact-meta{margin-top:30px;display:grid;gap:12px}
-.contact-meta a{font-weight:800}
-.form{display:grid;gap:13px}
+.hero-intro{width:370px;font-size:14px;line-height:1.65;color:rgba(255,255,255,.8)}
+.hero-link{
+  border-bottom:1px solid rgba(255,255,255,.65);padding-bottom:7px;
+  font-size:11px;text-transform:uppercase;letter-spacing:.13em;
+}
+.scroll{
+  position:absolute;right:28px;bottom:32px;
+  writing-mode:vertical-rl;text-transform:uppercase;letter-spacing:.17em;
+  font-size:9px;opacity:.65;
+}
+
+/* ---------- INTRO ---------- */
+.intro{
+  width:min(1280px,calc(100% - 56px));margin:auto;
+  padding:125px 0 145px;
+  display:grid;grid-template-columns:2fr 1fr;gap:100px;
+}
+.eyebrow{
+  font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--red);
+}
+.intro h2{
+  font-size:clamp(43px,5.2vw,76px);font-weight:500;letter-spacing:-.065em;
+  line-height:.97;margin:14px 0 0;max-width:850px;
+}
+.intro h2 em{font-family:var(--serif)}
+.intro-side{padding-top:43px;color:var(--grey);line-height:1.75}
+.intro-side strong{display:block;color:var(--black);font-size:12px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:15px}
+
+/* ---------- FEATURE / EDITORIAL GRID ---------- */
+.editorial{padding-bottom:145px}
+.wrap{width:min(1280px,calc(100% - 56px));margin:auto}
+.section-label{
+  border-top:1px solid var(--rule);padding-top:15px;
+  display:flex;justify-content:space-between;margin-bottom:34px;
+  font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--grey);
+}
+.feature-grid{
+  display:grid;grid-template-columns:1.5fr .7fr;gap:24px;align-items:start;
+}
+.feature-main{position:relative}
+.feature-main img{height:650px;object-fit:cover}
+.feature-main figcaption,.mini-caption{
+  display:flex;justify-content:space-between;gap:20px;padding-top:12px;
+  font-size:11px;color:var(--grey);
+}
+.feature-main figcaption strong{color:var(--black);font-weight:600}
+.feature-side{padding-top:110px}
+.feature-side img{height:360px;object-fit:cover}
+.feature-side .mini-caption{display:block}
+.feature-side .mini-caption strong{display:block;color:var(--black);margin-bottom:5px;font-size:14px}
+
+/* ---------- CITY INDEX ---------- */
+.cities{padding:0 0 145px}
+.city-list{border-top:1px solid var(--rule)}
+.city-row{
+  display:grid;grid-template-columns:75px 1fr 1fr 45px;align-items:center;
+  min-height:108px;border-bottom:1px solid var(--rule);
+  transition:.3s;padding:0 5px;
+}
+.city-row:hover{padding-left:18px;background:#e9e5dc}
+.city-number{font-size:10px;color:var(--grey)}
+.city-name{
+  font-size:clamp(30px,4vw,55px);letter-spacing:-.06em;font-weight:500;
+}
+.city-name em{font-family:var(--serif);font-weight:500}
+.city-desc{color:var(--grey);font-size:12px;max-width:330px}
+.city-arrow{font-size:22px;text-align:right}
+
+/* ---------- DARK CULTURE ---------- */
+.dark{
+  background:#171917;color:#f4f1e9;padding:135px 0;
+}
+.dark-grid{
+  width:min(1280px,calc(100% - 56px));margin:auto;
+  display:grid;grid-template-columns:.75fr 1.25fr;gap:100px;
+}
+.dark .eyebrow{color:#e45b54}
+.dark h2{
+  font-size:clamp(45px,6vw,82px);line-height:.91;letter-spacing:-.07em;
+  font-weight:500;margin:12px 0;
+}
+.dark h2 em{font-family:var(--serif)}
+.dark-copy{max-width:640px}
+.dark-copy>p:first-child{font-size:21px;line-height:1.45;color:#eeeae1}
+.dark-copy p{color:#989d97;line-height:1.75}
+.fact-line{
+  margin-top:48px;border-top:1px solid #383b37;
+  display:grid;grid-template-columns:repeat(3,1fr);
+}
+.fact{padding-top:18px;border-right:1px solid #383b37}
+.fact:not(:first-child){padding-left:20px}
+.fact:last-child{border:0}
+.fact b{display:block;font-size:31px;letter-spacing:-.05em;font-weight:500}
+.fact span{font-size:10px;color:#777d77;text-transform:uppercase;letter-spacing:.1em}
+
+/* ---------- FOOD ---------- */
+.food{padding:145px 0}
+.food-heading{
+  display:grid;grid-template-columns:1fr 1fr;gap:80px;margin-bottom:55px;
+}
+.food-heading h2{
+  font-size:clamp(48px,6vw,82px);line-height:.9;letter-spacing:-.07em;
+  font-weight:500;margin:10px 0;
+}
+.food-heading h2 em{font-family:var(--serif)}
+.food-heading p{max-width:420px;color:var(--grey);line-height:1.75;align-self:end}
+.food-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:24px}
+.food-large img{height:690px;object-fit:cover}
+.food-small{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.food-small article:nth-child(1){grid-column:span 2}
+.food-small article:nth-child(1) img{height:390px}
+.food-small img{height:275px;object-fit:cover}
+.food-caption{padding-top:11px}
+.food-caption small{color:var(--red);text-transform:uppercase;letter-spacing:.13em;font-size:9px}
+.food-caption h3{font-size:22px;font-weight:600;margin:3px 0;letter-spacing:-.035em}
+.food-caption p{font-size:11px;color:var(--grey);margin:0}
+
+/* ---------- CONTACT ---------- */
+.contact{
+  width:min(1280px,calc(100% - 56px));margin:auto;
+  border-top:1px solid var(--rule);padding:110px 0 135px;
+  display:grid;grid-template-columns:1fr 1fr;gap:120px;
+}
+.contact h2{
+  font-size:clamp(50px,6vw,85px);line-height:.9;letter-spacing:-.07em;
+  font-weight:500;margin:12px 0 25px;
+}
+.contact h2 em{font-family:var(--serif)}
+.contact-copy{color:var(--grey);max-width:370px;line-height:1.7}
+.contact-email{display:inline-block;margin-top:30px;font-weight:600;border-bottom:1px solid var(--black);padding-bottom:5px}
+.form{display:grid;grid-template-columns:1fr 1fr;gap:0 20px;align-content:start;padding-top:15px}
+.form label{font-size:9px;text-transform:uppercase;letter-spacing:.14em;color:var(--grey);padding:0 0 8px}
 .form input,.form textarea{
-  width:100%;border:1px solid var(--line);background:rgba(255,255,255,.5);
-  padding:15px 16px;border-radius:15px;outline:0;transition:.2s;
+  border:0;border-bottom:1px solid var(--rule);background:transparent;
+  border-radius:0;padding:11px 0 14px;outline:none;margin-bottom:27px;
 }
-.form input:focus,.form textarea:focus{border-color:var(--ink);background:#fff}
-.form textarea{min-height:145px;resize:vertical}
-.form button{border:0;padding:15px 20px;border-radius:999px;background:var(--ink);color:#fff;font-weight:800}
-
-/* FOOTER */
-footer{background:#0b0e0d;color:#fff;padding:70px 0 25px}
-.footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:45px}
-.footer-logo{font-size:30px;font-weight:900;letter-spacing:-.06em}
-.footer-logo span{color:var(--red)}
-footer p,footer a{color:#89918e;font-size:13px}
-footer a:hover{color:#fff}
-footer h4{font-size:12px;text-transform:uppercase;letter-spacing:.14em;margin:7px 0 14px}
-.footer-bottom{margin-top:55px;padding-top:20px;border-top:1px solid rgba(255,255,255,.1);display:flex;justify-content:space-between;color:#69716e;font-size:12px}
-
-/* MOBILE */
-@media(max-width:900px){
-  .nav-links{display:none}
-  .nav-cta{display:none}
-  .menu{display:block;margin-left:auto}
-  .hero-grid,.story-grid,.contact-box{grid-template-columns:1fr}
-  .hero{padding-top:125px}
-  .hero-media{margin-top:10px}
-  .hero-photo{height:500px}
-  .floating-card{left:15px;bottom:20px}
-  .city-grid{grid-template-columns:1fr 1fr}
-  .city,.city:nth-child(n){grid-column:span 1;height:360px}
-  .city:first-child{grid-column:span 2}
-  .food-layout{grid-template-columns:1fr}
-  .contact-box{padding:35px;gap:35px}
-  .footer-grid{grid-template-columns:1.5fr 1fr 1fr}
+.form input:focus,.form textarea:focus{border-color:var(--black)}
+.form textarea{grid-column:1/-1;min-height:100px;resize:vertical}
+.form button{
+  grid-column:1/-1;justify-self:start;background:var(--black);color:#fff;
+  border:0;padding:14px 22px;font-size:11px;text-transform:uppercase;
+  letter-spacing:.12em;
 }
-@media(max-width:620px){
-  .container{width:min(100% - 28px,1180px)}
-  .nav-inner{width:calc(100% - 18px)}
-  .hero h1{font-size:61px}
-  .hero-copy{font-size:15px}
-  .hero-actions{flex-wrap:wrap}
-  .hero-photo{height:420px;border-radius:25px}
-  section{padding:80px 0}
-  .section-head{display:block}
-  .section-head p{margin-top:20px}
-  .city-grid{grid-template-columns:1fr}
-  .city,.city:nth-child(n),.city:first-child{grid-column:span 1;height:370px}
-  .stats{grid-template-columns:1fr}
-  .stat,.stat:not(:first-child){border-right:0;border-bottom:1px solid rgba(255,255,255,.14);padding:18px 0}
-  .contact-box{padding:27px;border-radius:25px}
-  .footer-grid{grid-template-columns:1fr 1fr}
-  .footer-grid>div:first-child{grid-column:span 2}
-  .footer-bottom{display:block}
-  .footer-bottom span{display:block;margin-top:7px}
+
+/* ---------- FOOTER ---------- */
+footer{background:#111311;color:#f2efe7;padding:65px 0 25px}
+.footer-wrap{width:min(1280px,calc(100% - 56px));margin:auto}
+.footer-top{display:grid;grid-template-columns:2fr repeat(3,1fr);gap:50px}
+.footer-brand{font-size:25px;font-weight:700;letter-spacing:-.06em}
+.footer-brand i{font-style:normal;color:#df4b44}
+.footer-top p{color:#777d77;font-size:11px;line-height:1.7;max-width:300px}
+.footer-top h4{font-size:9px;text-transform:uppercase;letter-spacing:.16em;font-weight:500;color:#777d77;margin:4px 0 18px}
+.footer-top a{display:block;font-size:12px;margin:0 0 10px;color:#b8bbb5}
+.footer-top a:hover{color:#fff}
+.footer-bottom{
+  margin-top:65px;border-top:1px solid #30332f;padding-top:18px;
+  display:flex;justify-content:space-between;color:#646a64;font-size:9px;
+  text-transform:uppercase;letter-spacing:.1em;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media(max-width:850px){
+  .header-inner,.hero-content,.wrap,.intro,.dark-grid,.contact,.footer-wrap{width:calc(100% - 32px)}
+  .nav{gap:17px}.nav a:nth-child(3){display:none}.header-index{display:none}
+  .hero{min-height:720px}
+  .hero h1{font-size:clamp(60px,16vw,105px)}
+  .hero-bottom{display:block}.hero-intro{width:min(100%,420px);margin-bottom:20px}
+  .intro,.feature-grid,.food-heading,.food-grid,.contact,.dark-grid{grid-template-columns:1fr;gap:45px}
+  .intro{padding:90px 0 100px}
+  .intro-side{padding-top:0}
+  .feature-side{padding-top:20px}
+  .feature-main img{height:520px}
+  .city-row{grid-template-columns:42px 1fr 30px;min-height:90px}
+  .city-desc{display:none}
+  .dark{padding:95px 0}
+  .fact-line{grid-template-columns:1fr}
+  .fact,.fact:not(:first-child){border-right:0;border-bottom:1px solid #383b37;padding:17px 0}
+  .food{padding:95px 0}
+  .food-large img{height:520px}
+  .contact{padding:90px 0}
+  .footer-top{grid-template-columns:1fr 1fr}
+  .footer-top>div:first-child{grid-column:1/-1}
+}
+@media(max-width:520px){
+  .header-inner{height:72px}.nav{gap:13px}.nav a{font-size:9px}
+  .hero{min-height:680px}.hero-content{padding-bottom:55px}
+  .hero h1{font-size:59px}
+  .hero-intro{font-size:12px}
+  .scroll{display:none}
+  .feature-main img,.food-large img{height:420px}
+  .food-small{grid-template-columns:1fr;gap:30px}
+  .food-small article:nth-child(1){grid-column:auto}
+  .food-small article:nth-child(1) img,.food-small img{height:330px}
+  .form{grid-template-columns:1fr}
+  .form textarea{grid-column:auto}
+  .form button{grid-column:auto}
+  .footer-top{grid-template-columns:1fr 1fr}
+  .footer-bottom{display:block}.footer-bottom span{display:block;margin-top:7px}
 }
 </style>
 </head>
 
 <body>
 
-<nav class="nav">
-  <div class="nav-inner">
-    <a class="logo" href="#home"><span>IN</span> MOROCCO</a>
-    <div class="nav-links">
-      <a class="active" href="#home">Home</a>
+<header>
+  <div class="header-inner">
+    <a class="brand" href="#top"><i>IN</i> MOROCCO</a>
+    <nav class="nav" aria-label="Main navigation">
       <a href="#cities">Cities</a>
       <a href="#food">Food</a>
-      <a href="#story">Culture</a>
+      <a href="#culture">Culture</a>
       <a href="#contact">Contact</a>
-    </div>
-    <a class="nav-cta" href="#cities">Explore Morocco ↗</a>
-    <button class="menu" id="menuBtn" aria-label="Open menu">☰</button>
+    </nav>
+    <div class="header-index">01—06</div>
   </div>
-</nav>
+</header>
 
-<main id="home">
+<main id="top">
 
 <section class="hero">
-  <div class="container hero-grid">
-    <div>
-      <div class="kicker"><span class="dot"></span> A visual guide to Morocco</div>
-      <h1>Come for the <em>colors.</em><br>Stay for the soul.</h1>
-      <p class="hero-copy">
-        From Atlantic coastlines to Atlas peaks, Morocco is a country of contrasts,
-        warm hospitality and stories around every corner. Discover its cities,
-        food and everyday culture through a fresh lens.
-      </p>
-      <div class="hero-actions">
-        <a class="primary" href="#cities">Start exploring <span class="arrow">↗</span></a>
-        <a class="secondary" href="#food">Taste Morocco</a>
-      </div>
+  <div class="hero-image">
+    <img src="morocco-img/moroccofood.jpg" alt="Morocco" onerror="this.src='imgs/2022-08/tajine-marocain.jpg'">
+  </div>
+  <div class="hero-content">
+    <div class="hero-kicker">A visual guide to Morocco</div>
+    <h1>Get lost<br>in <em>Morocco.</em></h1>
+    <div class="hero-bottom">
+      <p class="hero-intro">A country of old medinas, Atlantic light, mountain roads and tables that are never quite full. Start anywhere.</p>
+      <a class="hero-link" href="#cities">Explore the country ↓</a>
     </div>
+  </div>
+  <div class="scroll">Scroll to explore</div>
+</section>
 
-    <div class="hero-media">
-      <div class="hero-photo">
-        <img src="morocco-img/moroccofood.jpg" alt="Moroccan food and culture" onerror="this.src='imgs/2022-08/tajine-marocain.jpg'">
-        <div class="photo-label">
-          <div><small>01 / 06</small><br><strong>Made of many worlds.</strong></div>
-          <small>Morocco · North Africa</small>
-        </div>
-      </div>
-      <div class="floating-card">
-        <div class="num">11+</div>
-        <p>national parks and landscapes waiting to be explored</p>
+<section class="intro">
+  <div>
+    <div class="eyebrow">01 / The idea</div>
+    <h2>Not just somewhere you <em>visit.</em><br>A place that stays with you.</h2>
+  </div>
+  <div class="intro-side">
+    <strong>In Morocco, 2026</strong>
+    The original project started as a simple introduction to Morocco. This new edition keeps that spirit, but gives the places, food and stories room to breathe.
+  </div>
+</section>
+
+<section class="editorial">
+  <div class="wrap">
+    <div class="section-label"><span>02 / A first look</span><span>North Africa</span></div>
+    <div class="feature-grid">
+      <figure class="feature-main" style="margin:0">
+        <img src="morocco-img/ftoormorocco.jpg" alt="Moroccan table and food" onerror="this.src='imgs/2022-08/tajine-marocain.jpg'">
+        <figcaption><strong>The Moroccan table</strong><span>Food is part of the welcome.</span></figcaption>
+      </figure>
+      <figure class="feature-side" style="margin:0">
+        <img src="morocco-img/atay1.jpg" alt="Moroccan mint tea">
+        <div class="mini-caption"><strong>Pour slowly.</strong> Mint tea is less a drink than a small ritual.</div>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="cities" id="cities">
+  <div class="wrap">
+    <div class="section-label"><span>03 / The cities</span><span>Choose a direction</span></div>
+    <div class="city-list">
+      <a class="city-row" href="tangier.html">
+        <span class="city-number">01</span><span class="city-name">Tangier</span><span class="city-desc">Atlantic air, Mediterranean light and a city looking north.</span><span class="city-arrow">↗</span>
+      </a>
+      <a class="city-row" href="chefchaouen.html">
+        <span class="city-number">02</span><span class="city-name">Chefchaouen</span><span class="city-desc">Blue streets tucked into the Rif mountains.</span><span class="city-arrow">↗</span>
+      </a>
+      <a class="city-row" href="fez.html">
+        <span class="city-number">03</span><span class="city-name">Fez</span><span class="city-desc">Craft, courtyards and one of the world's great medinas.</span><span class="city-arrow">↗</span>
+      </a>
+      <a class="city-row" href="marrackech.html">
+        <span class="city-number">04</span><span class="city-name">Marrakech</span><span class="city-desc">Ochre walls, riads, souks and long evenings.</span><span class="city-arrow">↗</span>
+      </a>
+      <a class="city-row" href="casablaca.html">
+        <span class="city-number">05</span><span class="city-name">Casablanca</span><span class="city-desc">Modern Morocco meets the Atlantic.</span><span class="city-arrow">↗</span>
+      </a>
+      <a class="city-row" href="agader.html">
+        <span class="city-number">06</span><span class="city-name">Agadir</span><span class="city-desc">Sun, surf and an open Atlantic horizon.</span><span class="city-arrow">↗</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="dark" id="culture">
+  <div class="dark-grid">
+    <div>
+      <div class="eyebrow">04 / The feeling</div>
+      <h2>Morocco is a country of <em>contrasts.</em></h2>
+    </div>
+    <div class="dark-copy">
+      <p>Sea to desert. Ancient medina to contemporary city. A quiet cup of tea to a market full of noise.</p>
+      <p>Its landscapes stretch from the Atlantic and Mediterranean coasts to the High Atlas. Its food, architecture and hospitality carry layers of history without feeling frozen in it.</p>
+      <div class="fact-line">
+        <div class="fact"><b>3,500+</b><span>km of coastline</span></div>
+        <div class="fact"><b>2,300m</b><span>High Atlas landscapes</span></div>
+        <div class="fact"><b>11+</b><span>national parks</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<div class="marquee" aria-hidden="true">
-  <div class="marquee-track">
-    <span>Casablanca <b>✦</b></span><span>Marrakech <b>✦</b></span><span>Tangier <b>✦</b></span><span>Chefchaouen <b>✦</b></span><span>Fez <b>✦</b></span><span>Agadir <b>✦</b></span>
-    <span>Casablanca <b>✦</b></span><span>Marrakech <b>✦</b></span><span>Tangier <b>✦</b></span><span>Chefchaouen <b>✦</b></span><span>Fez <b>✦</b></span><span>Agadir <b>✦</b></span>
-  </div>
-</div>
-
-<section id="cities">
-  <div class="container">
-    <div class="section-head">
+<section class="food" id="food">
+  <div class="wrap">
+    <div class="food-heading">
       <div>
-        <div class="eyebrow">The places</div>
-        <h2>One country.<br>Many moods.</h2>
+        <div class="eyebrow">05 / At the table</div>
+        <h2>Eat with your<br><em>hands full.</em></h2>
       </div>
-      <p>Wander from blue mountain towns and ancient medinas to modern coastal cities. Every place has its own rhythm.</p>
+      <p>Tagine, couscous, pastilla, msemen and mint tea are only the beginning. Moroccan cooking changes from city to city, family to family, season to season.</p>
     </div>
 
-    <div class="city-grid">
-      <a class="city" href="marrackech.html">
-        <img src="morocco-img/moroccofood.jpg" alt="Marrakech">
-        <div class="city-info"><span>South · 01</span><h3>Marrakech</h3><p>Ochre walls, riads, souks and nights that never quite slow down.</p></div>
-      </a>
-      <a class="city" href="tangier.html">
-        <img src="morocco-img/ftoormorocco.jpg" alt="Tangier">
-        <div class="city-info"><span>North · 02</span><h3>Tangier</h3><p>Where the Mediterranean meets the Atlantic.</p></div>
-      </a>
-      <a class="city" href="chefchaouen.html">
-        <img src="morocco-img/tagine6.jpg" alt="Chefchaouen">
-        <div class="city-info"><span>Rif · 03</span><h3>Chefchaouen</h3><p>The blue city in the mountains.</p></div>
-      </a>
-      <a class="city" href="fez.html">
-        <img src="morocco-img/couscous2.jpg" alt="Fez">
-        <div class="city-info"><span>Heritage · 04</span><h3>Fez</h3><p>A living medina full of craft and history.</p></div>
-      </a>
-      <a class="city" href="casablaca.html">
-        <img src="morocco-img/l3xamorocco.jpg" alt="Casablanca">
-        <div class="city-info"><span>Atlantic · 05</span><h3>Casablanca</h3><p>Morocco's energetic modern heart.</p></div>
-      </a>
-      <a class="city" href="agader.html">
-        <img src="morocco-img/hoot_mixwi1.jpg" alt="Agadir">
-        <div class="city-info"><span>Coast · 06</span><h3>Agadir</h3><p>Sun, surf and a long Atlantic horizon.</p></div>
-      </a>
-      <a class="city" href="#contact">
-        <img src="morocco-img/atay1.jpg" alt="Moroccan tea">
-        <div class="city-info"><span>Everywhere · 07</span><h3>And beyond</h3><p>The best stories often start outside the itinerary.</p></div>
-      </a>
-    </div>
-  </div>
-</section>
-
-<section class="story" id="story">
-  <div class="container story-grid">
-    <div>
-      <div class="eyebrow">The feeling</div>
-      <h2>Morocco is more than a destination.</h2>
-    </div>
-    <div>
-      <p class="story-copy">
-        It is the sound of a medina waking up, the first mint tea of the afternoon,
-        a road cutting through the Atlas and a table that somehow always has room
-        for one more person.
-      </p>
-      <p>
-        The country's landscapes stretch from sea level on the Atlantic coast to
-        the High Atlas, while its cities preserve centuries of architecture,
-        craft, food and tradition.
-      </p>
-      <div class="stats">
-        <div class="stat"><strong>3,500+</strong><span>km of coastline</span></div>
-        <div class="stat"><strong>2,300m</strong><span>high Atlas landscapes</span></div>
-        <div class="stat"><strong>∞</strong><span>stories to discover</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="food">
-  <div class="container">
-    <div class="section-head">
-      <div>
-        <div class="eyebrow">The table</div>
-        <h2>Come hungry.</h2>
-      </div>
-      <p>Moroccan food is generous, fragrant and deeply connected to place. Here are a few classics worth getting to know.</p>
-    </div>
-
-    <div class="food-layout">
-      <a class="food-card" href="food.html">
+    <div class="food-grid">
+      <article class="food-large">
         <img src="imgs/2022-08/tajine-marocain.jpg" alt="Moroccan tagine">
-        <div class="food-title"><small>Slow-cooked classic</small><h3>Tagine</h3><p>Warm spices · tender vegetables · unforgettable aroma</p></div>
-      </a>
-      <div class="food-stack">
-        <a class="food-card small" href="food.html">
+        <div class="food-caption"><small>01 / Classic</small><h3>Tagine</h3><p>Slow cooking, warm spices and a table built around sharing.</p></div>
+      </article>
+
+      <div class="food-small">
+        <article>
           <img src="morocco-img/couscous2.jpg" alt="Couscous">
-          <div class="food-title"><small>Friday tradition</small><h3>Couscous</h3></div>
-        </a>
-        <a class="food-card small" href="food.html">
-          <img src="morocco-img/atay1.jpg" alt="Moroccan mint tea">
-          <div class="food-title"><small>Pour with ceremony</small><h3>Mint tea</h3></div>
-        </a>
+          <div class="food-caption"><small>02 / Tradition</small><h3>Couscous</h3><p>A dish with a place in the rhythm of the week.</p></div>
+        </article>
+        <article>
+          <img src="morocco-img/bistila.jpg" alt="Pastilla">
+          <div class="food-caption"><small>03 / Sweet & savoury</small><h3>Pastilla</h3><p>Layers of pastry, spice and contrast.</p></div>
+        </article>
+        <article>
+          <img src="morocco-img/msimin1.jpg" alt="Msemen">
+          <div class="food-caption"><small>04 / Morning</small><h3>Msemen</h3><p>Folded, crisp and made for tea.</p></div>
+        </article>
       </div>
     </div>
   </div>
 </section>
 
-<section id="contact">
-  <div class="container">
-    <div class="contact-box">
-      <div>
-        <div class="eyebrow">Say hello</div>
-        <h2>Let's talk<br>Morocco.</h2>
-        <p>Questions, ideas, recommendations or just want to share your favorite Moroccan spot?</p>
-        <div class="contact-meta">
-          <a href="mailto:houssam2k20f@gamil.com">houssam2k20f@gamil.com ↗</a>
-          <span>North Africa · Morocco</span>
-        </div>
-      </div>
-      <form class="form" onsubmit="event.preventDefault(); alert('Thanks! Your message form is ready to connect to your backend.');">
-        <input required type="text" placeholder="Your name" aria-label="Your name">
-        <input required type="email" placeholder="Email address" aria-label="Email address">
-        <input type="tel" placeholder="Phone (optional)" aria-label="Phone">
-        <textarea required placeholder="Tell us what is on your mind..." aria-label="Message"></textarea>
-        <button type="submit">Send message ↗</button>
-      </form>
-    </div>
+<section class="contact" id="contact">
+  <div>
+    <div class="eyebrow">06 / Say hello</div>
+    <h2>Have a place<br>to <em>share?</em></h2>
+    <p class="contact-copy">Tell us about a city, dish, road or corner of Morocco that deserves a place here.</p>
+    <a class="contact-email" href="mailto:houssam2k20f@gamil.com">houssam2k20f@gamil.com ↗</a>
   </div>
+
+  <form class="form" onsubmit="event.preventDefault();alert('Thanks — the form is ready to connect to your backend.');">
+    <div><label>Name</label><input required type="text" placeholder="Your name"></div>
+    <div><label>Email</label><input required type="email" placeholder="you@example.com"></div>
+    <div style="grid-column:1/-1"><label>Message</label><textarea required placeholder="Write your message..."></textarea></div>
+    <button type="submit">Send message ↗</button>
+  </form>
 </section>
 
 </main>
 
 <footer>
-  <div class="container">
-    <div class="footer-grid">
+  <div class="footer-wrap">
+    <div class="footer-top">
       <div>
-        <div class="footer-logo"><span>IN</span> MOROCCO</div>
-        <p>Discover the places, plates and stories that make Morocco unforgettable.</p>
+        <div class="footer-brand"><i>IN</i> MOROCCO</div>
+        <p>A visual guide to the places, food and everyday details that make Morocco worth getting lost in.</p>
       </div>
       <div>
         <h4>Explore</h4>
-        <p><a href="#cities">Cities</a></p>
-        <p><a href="#food">Food</a></p>
-        <p><a href="#story">Culture</a></p>
+        <a href="#cities">Cities</a><a href="#food">Food</a><a href="#culture">Culture</a>
       </div>
       <div>
         <h4>Cities</h4>
-        <p><a href="tangier.html">Tangier</a></p>
-        <p><a href="chefchaouen.html">Chefchaouen</a></p>
-        <p><a href="marrackech.html">Marrakech</a></p>
+        <a href="tangier.html">Tangier</a><a href="chefchaouen.html">Chefchaouen</a><a href="marrackech.html">Marrakech</a>
       </div>
       <div>
-        <h4>More</h4>
-        <p><a href="contact.html">Contact</a></p>
-        <p><a href="about.html">About us</a></p>
-        <p><a href="food.html">Moroccan food</a></p>
+        <h4>Project</h4>
+        <a href="about.html">About us</a><a href="contact.html">Contact</a><a href="food.html">Food archive</a>
       </div>
     </div>
     <div class="footer-bottom">
       <span>© 2026 IN MOROCCO</span>
-      <span>Designed by <b style="color:var(--red)">HOUSSAM NFISSI</b></span>
+      <span>Designed by Houssam Nfissi</span>
     </div>
   </div>
 </footer>
-
-<script>
-const menuBtn = document.getElementById('menuBtn');
-const navLinks = document.querySelector('.nav-links');
-
-menuBtn.addEventListener('click', () => {
-  const open = navLinks.style.display === 'flex';
-  navLinks.style.display = open ? '' : 'flex';
-  navLinks.style.position = 'absolute';
-  navLinks.style.top = '72px';
-  navLinks.style.left = '10px';
-  navLinks.style.right = '10px';
-  navLinks.style.padding = '10px';
-  navLinks.style.flexDirection = 'column';
-  navLinks.style.alignItems = 'stretch';
-  navLinks.style.background = 'rgba(255,253,248,.96)';
-  navLinks.style.borderRadius = '20px';
-  navLinks.style.boxShadow = '0 20px 50px rgba(0,0,0,.12)';
-});
-
-document.querySelectorAll('.nav-links a').forEach(link => {
-  link.addEventListener('click', () => {
-    if (window.innerWidth <= 900) navLinks.style.display = '';
-  });
-});
-
-const sections = document.querySelectorAll('main section[id]');
-const links = document.querySelectorAll('.nav-links a');
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting){
-      links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + entry.target.id));
-    }
-  });
-},{rootMargin:'-35% 0px -55% 0px'});
-sections.forEach(s => observer.observe(s));
-</script>
 
 </body>
 </html>
